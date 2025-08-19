@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروژه هکر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>پروژه هکر</h1>
+        <button id="theme-switcher-btn">تغییر تم</button>
+        <p>یک شبیه‌ساز هک برای مبتدیان</p>
+    </header>
+
+    <main id="app">
+        <section id="challenge-list-container">
+            <h2>چالش‌ها</h2>
+            <ul id="challenge-list">
+                <!-- چالش‌ها به صورت پویا در اینجا قرار می‌گیرند -->
+            </ul>
+        </section>
+        <section id="challenge-view-container">
+            <h2 id="challenge-title">عنوان چالش</h2>
+            <p id="challenge-description">توضیحات چالش در اینجا نمایش داده می‌شود.</p>
+            <p id="challenge-hint"></p>
+            <div id="challenge-input">
+                <input type="text" id="flag-input" placeholder="پرچم را اینجا وارد کنید...">
+                <button id="submit-flag-btn">ارسال</button>
+            </div>
+            <p id="feedback"></p>
+        </section>
+    </main>
+
+    <!-- HINT: پرچم برای چالش اول اینجاست! flag{خوش_آمدی_هکر} -->
+
+    <footer>
+        <p>ساخته شده توسط جولز</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
