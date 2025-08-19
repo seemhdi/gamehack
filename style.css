@@ -227,3 +227,88 @@ body.light-theme {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+
+/* --- Tutorial Modal --- */
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #0d0d0d;
+    margin: auto;
+    padding: 20px 30px;
+    border: 1px solid #00ff00;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+    text-align: right;
+}
+
+.modal-close {
+    color: #00ff00;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+#tutorial-body p {
+    line-height: 1.6;
+}
+
+#tutorial-body pre {
+    background-color: #000;
+    border: 1px solid #003300;
+    padding: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Light Theme Overrides for Modal */
+.light-theme .modal-content {
+    background-color: #fff;
+    border-color: #ccc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.light-theme .modal-close {
+    color: #aaa;
+}
+
+.light-theme .modal-close:hover,
+.light-theme .modal-close:focus {
+    color: #000;
+}
+
+.light-theme #tutorial-body pre {
+    background-color: #f4f4f4;
+    border-color: #ddd;
+    color: #333;
+}
