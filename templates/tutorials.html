@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}آموزش‌های {{ category_name }}{% endblock %}
+
+{% block content %}
+    <h2 class="glow">آموزش‌های سطح: {{ category_name }}</h2>
+
+    <div class="tutorial-list">
+        {% if tutorials %}
+            <ul>
+                {% for tutorial in tutorials %}
+                    <li>
+                        <a href="{{ url_for('tutorial', tutorial_id=tutorial.id) }}">{{ tutorial.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>در حال حاضر آموزشی در این سطح وجود ندارد. به زودی اضافه خواهد شد!</p>
+        {% endif %}
+    </div>
+{% endblock %}

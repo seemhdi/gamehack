@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}خوش آمدید{% endblock %}
+
+{% block content %}
+    <h1>به پلتفرم آموزش هک خوش آمدید</h1>
+    <p>برای شروع، لطفاً ثبت‌نام کنید یا وارد شوید.</p>
+    <br>
+    <p>
+        <a href="{{ url_for('register') }}" class="btn">ثبت‌نام</a>
+        <a href="{{ url_for('login') }}" class="btn">ورود</a>
+    </p>
+{% endblock %}

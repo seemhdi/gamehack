@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tutorial.title }}{% endblock %}
+
+{% block content %}
+    <h2 class="glow">{{ tutorial.title }}</h2>
+
+    <div class="tutorial-content">
+        {# The |safe filter is used because the content is trusted HTML from our database #}
+        {{ tutorial.content|safe }}
+    </div>
+
+    <hr class="glow-hr">
+
+    <div class="quiz-section">
+        <h3 class="glow">آزمون</h3>
+        {% if tutorial.questions %}
+            <form method="POST" action="{{ url_for('tutorial', tutorial_id=tutorial.id) }}">
+                {% for question in tutorial.questions %}
+                    <div class="question-block">
+                        <p class="question-text">{{ loop.index }}. {{ question.text }}</p>
+                        <div class="choices">
+                            {% for choice in question.choices %}
+                                <label class="choice-label">
+                                    <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}" required>
+                                    {{ choice.text }}
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn">ارسال پاسخ‌ها</button>
+            </form>
+        {% else %}
+            <p>این آموزش آزمونی ندارد.</p>
+        {% endif %}
+    </div>
+{% endblock %}

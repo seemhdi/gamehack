@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}پروفایل شما{% endblock %}
+
+{% block content %}
+    <h2 class="glow">پروفایل کاربری</h2>
+    <div class="rank-card">
+        <div class="rank-card-header">
+            <h3>{{ user.username }}</h3>
+        </div>
+        <div class="rank-card-body">
+            <div class="rank-info">
+                <span class="rank-label">رتبه فعلی:</span>
+                <span class="rank-name">{{ user.rank }}</span>
+            </div>
+            <div class="score-info">
+                <span class="score-label">امتیاز کل:</span>
+                <span class="score-value">{{ user.score }}</span>
+            </div>
+            <div class="progress-section">
+                <div class="progress-labels">
+                    <span>{{ user.rank }}</span>
+                    {% if next_rank %}
+                        <span>{{ next_rank }}</span>
+                    {% else %}
+                        <span>MAX</span>
+                    {% endif %}
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" style="width: {{ progress }}%;"></div>
+                </div>
+                {% if next_rank %}
+                <small>برای رسیدن به رتبه بعدی تلاش کن!</small>
+                {% else %}
+                <small>شما به بالاترین رتبه رسیده‌اید!</small>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
